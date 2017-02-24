@@ -421,6 +421,7 @@ class Portal extends Component {
       ref: this.handleRef,
       onBlur: this.handleTriggerBlur,
       onClick: this.handleTriggerClick,
+      closeThisDamnThing: this.close,
       onFocus: this.handleTriggerFocus,
       onMouseLeave: this.handleTriggerMouseLeave,
       onMouseEnter: this.handleTriggerMouseEnter,

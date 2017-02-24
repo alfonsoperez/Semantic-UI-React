@@ -1,6 +1,6 @@
 import cx from 'classnames'
 import _ from 'lodash'
-import React, { Component, PropTypes } from 'react'
+import React, { Component, PropTypes, cloneElement } from 'react'
 
 import {
   customPropTypes,
@@ -348,7 +348,9 @@ export default class Popup extends Component {
 
     const popupJSX = (
       <ElementType {...rest} className={classes} style={style} ref={this.handlePopupRef}>
-        {children}
+        {cloneElement(children, {
+          closeThisDamnThing: this.handleClose,
+        })}
         {_.isNil(children) && PopupHeader.create(header)}
         {_.isNil(children) && PopupContent.create(content)}
       </ElementType>
